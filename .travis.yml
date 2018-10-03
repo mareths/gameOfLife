@@ -5,5 +5,10 @@ jdk: oraclejdk10
 scala:
    - 2.12.7
 
+addons:
+  sonarcloud:
+    organization: "mareths-github"
+
 script:
    - sbt ++$TRAVIS_SCALA_VERSION test
+   - sonar-scanner
